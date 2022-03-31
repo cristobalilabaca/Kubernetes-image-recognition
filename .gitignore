@@ -1,1 +1,11 @@
 **/.DS_Store
+**/creds.json
+node_modules
+**.pem
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media
+**/venv

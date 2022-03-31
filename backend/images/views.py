@@ -28,9 +28,9 @@ class ImageList(APIView):
 
   def post(self, request):
     serializer = ImageSerializer(data=request.data)
+    print(request.data)
     if serializer.is_valid():
       im = serializer.save()
-      print('f')
       # async_create_tags(serializer, im)
       create_tags(serializer, im)
       return Response(serializer.data, status=status.HTTP_201_CREATED)

@@ -55,7 +55,8 @@ const LandingPage = () => {
     setUploading(true);
     const formData = new FormData();
     formData.append('image', acceptedFiles[0])
-    await axios.post('http://localhost:8000/image/', formData, {headers: {
+    //https://[nombreservicio].cluster.svc
+    await axios.post('http://35.238.155.247/image/', formData, {headers: {
       'Content-Type': 'multipart/form-data'
     }})
     acceptedFiles.length = 0
@@ -66,7 +67,7 @@ const LandingPage = () => {
   }
 
   const fetchData = async () => {
-    const img = await axios.get('http://localhost:8000/image/');
+    const img = await axios.get('http://35.238.155.247/image/');
     setImages(img.data)
   }
 
